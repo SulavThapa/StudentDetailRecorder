@@ -61,6 +61,8 @@ namespace SulavThapa17031233
             DataTable datatable = Utility.ConvertToDataTable(studentList);
             studentDataTable.DataSource = datatable;
             BindChart(studentList);
+            btnUpdate.Visible = true;
+
         }
         private void BindChart(List<Student> lists)
         {

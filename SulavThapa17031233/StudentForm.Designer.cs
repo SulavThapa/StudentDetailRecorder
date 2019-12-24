@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.index = new System.Windows.Forms.Label();
-            this.indexNoStudent = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.firstName = new System.Windows.Forms.TextBox();
             this.lastName = new System.Windows.Forms.TextBox();
             this.address = new System.Windows.Forms.TextBox();
@@ -58,25 +56,12 @@
             this.registrationDate = new System.Windows.Forms.DateTimePicker();
             this.studentReport = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Chartlabel = new System.Windows.Forms.Label();
+            this.heading = new System.Windows.Forms.Label();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentReport)).BeginInit();
             this.SuspendLayout();
-            // 
-            // index
-            // 
-            this.index.AutoSize = true;
-            this.index.Location = new System.Drawing.Point(81, 50);
-            this.index.Name = "index";
-            this.index.Size = new System.Drawing.Size(41, 17);
-            this.index.TabIndex = 0;
-            this.index.Text = "Index";
-            // 
-            // indexNoStudent
-            // 
-            this.indexNoStudent.Location = new System.Drawing.Point(156, 50);
-            this.indexNoStudent.Name = "indexNoStudent";
-            this.indexNoStudent.Size = new System.Drawing.Size(100, 22);
-            this.indexNoStudent.TabIndex = 1;
             // 
             // firstName
             // 
@@ -220,12 +205,19 @@
             // 
             // studentDataTable
             // 
-            this.studentDataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.studentDataTable.Location = new System.Drawing.Point(35, 409);
+            this.studentDataTable.AllowUserToResizeColumns = false;
+            this.studentDataTable.AllowUserToResizeRows = false;
+            this.studentDataTable.ColumnHeadersHeight = 29;
+            this.studentDataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.studentDataTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Edit,
+            this.Delete});
+            this.studentDataTable.Location = new System.Drawing.Point(12, 409);
             this.studentDataTable.Name = "studentDataTable";
+            this.studentDataTable.ReadOnly = true;
             this.studentDataTable.RowHeadersWidth = 51;
             this.studentDataTable.RowTemplate.Height = 24;
-            this.studentDataTable.Size = new System.Drawing.Size(1266, 382);
+            this.studentDataTable.Size = new System.Drawing.Size(1322, 382);
             this.studentDataTable.TabIndex = 18;
             // 
             // btnSubmit
@@ -283,16 +275,16 @@
             // 
             // studentReport
             // 
-            chartArea5.Name = "ChartArea1";
-            this.studentReport.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.studentReport.Legends.Add(legend5);
+            chartArea2.Name = "ChartArea1";
+            this.studentReport.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.studentReport.Legends.Add(legend2);
             this.studentReport.Location = new System.Drawing.Point(722, 29);
             this.studentReport.Name = "studentReport";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.studentReport.Series.Add(series5);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.studentReport.Series.Add(series2);
             this.studentReport.Size = new System.Drawing.Size(612, 365);
             this.studentReport.TabIndex = 25;
             this.studentReport.Text = "Student Report";
@@ -306,11 +298,40 @@
             this.Chartlabel.TabIndex = 26;
             this.Chartlabel.Text = "Student Report";
             // 
+            // heading
+            // 
+            this.heading.AutoSize = true;
+            this.heading.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.heading.Location = new System.Drawing.Point(168, 29);
+            this.heading.Name = "heading";
+            this.heading.Size = new System.Drawing.Size(325, 39);
+            this.heading.TabIndex = 27;
+            this.heading.Text = "Student Detail Form";
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "";
+            this.Edit.Width = 50;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "";
+            this.Delete.Width = 60;
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1346, 803);
+            this.Controls.Add(this.heading);
             this.Controls.Add(this.Chartlabel);
             this.Controls.Add(this.studentReport);
             this.Controls.Add(this.registrationDate);
@@ -336,8 +357,6 @@
             this.Controls.Add(this.address);
             this.Controls.Add(this.lastName);
             this.Controls.Add(this.firstName);
-            this.Controls.Add(this.indexNoStudent);
-            this.Controls.Add(this.index);
             this.MaximizeBox = false;
             this.Name = "StudentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -350,9 +369,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label index;
-        private System.Windows.Forms.TextBox indexNoStudent;
         private System.Windows.Forms.TextBox firstName;
         private System.Windows.Forms.TextBox lastName;
         private System.Windows.Forms.TextBox address;
@@ -378,6 +394,9 @@
         private System.Windows.Forms.DateTimePicker registrationDate;
         private System.Windows.Forms.DataVisualization.Charting.Chart studentReport;
         private System.Windows.Forms.Label Chartlabel;
+        private System.Windows.Forms.Label heading;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }
 
