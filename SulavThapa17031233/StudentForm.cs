@@ -15,9 +15,51 @@ namespace SulavThapa17031233
         public StudentForm()
         {
             InitializeComponent();
+            BindGrid();
+
+            btnUpdate.Visible = false;
+        }
+
+        private void BindGrid()
+        {
+
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            //making the refrence object of the student made in the student class
+            Student obj = new Student();
+            //Adding the data from the textbox to the object
+            string firstname = firstName.Text;
+            string lastname = lastName.Text;
+            obj.Name = firstname + " " + lastname;
+            obj.address = address.Text;
+            obj.email = email.Text;
+            obj.studentProgramme = studentProgramme.Text;
+            obj.studentBirthDate = studentBirthDate.Value;
+            obj.studentContactNo = studentContactNo.Text;
+            obj.studentGender = studentGender.SelectedItem.ToString();
+            obj.registrationDate = registrationDate.Value;
+            obj.Add(obj);
+            BindGrid();
+            Clear();
+        }
+
+        private void Clear()
+        {
+            //clearing all the text view
+            firstName.Text = "";
+            lastName.Text = "";
+            address.Text = "";
+            email.Text = "";
+            studentProgramme.SelectedItem = null;
+            studentBirthDate.Value = DateTime.Today;
+            studentContactNo.Text = "";
+            studentGender.SelectedItem = null;
+            registrationDate.Value = DateTime.Today;
+        }
+
+        private void studentReport_Click(object sender, EventArgs e)
         {
 
         }

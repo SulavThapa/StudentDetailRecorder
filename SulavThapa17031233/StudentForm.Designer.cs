@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.index = new System.Windows.Forms.Label();
             this.indexNoStudent = new System.Windows.Forms.TextBox();
             this.firstName = new System.Windows.Forms.TextBox();
@@ -283,19 +283,20 @@
             // 
             // studentReport
             // 
-            chartArea1.Name = "ChartArea1";
-            this.studentReport.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.studentReport.Legends.Add(legend1);
+            chartArea7.Name = "ChartArea1";
+            this.studentReport.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.studentReport.Legends.Add(legend7);
             this.studentReport.Location = new System.Drawing.Point(35, 409);
             this.studentReport.Name = "studentReport";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.studentReport.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.studentReport.Series.Add(series7);
             this.studentReport.Size = new System.Drawing.Size(612, 365);
             this.studentReport.TabIndex = 25;
             this.studentReport.Text = "Student Report";
+            this.studentReport.Click += new System.EventHandler(this.studentReport_Click);
             // 
             // Chartlabel
             // 
@@ -338,7 +339,9 @@
             this.Controls.Add(this.firstName);
             this.Controls.Add(this.indexNoStudent);
             this.Controls.Add(this.index);
+            this.MaximizeBox = false;
             this.Name = "StudentForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Detail Form";
             ((System.ComponentModel.ISupportInitialize)(this.studentDataTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentReport)).EndInit();
