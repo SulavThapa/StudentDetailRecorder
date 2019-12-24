@@ -143,19 +143,19 @@ namespace SulavThapa17031233
             if (lst != null)
             {
                 var result = lst
-                    .GroupBy(l => l.studentGender)
+                    .GroupBy(l => l.studentProgramme)
                     .Select(cl => new
                     {
-                        Gender = cl.First().studentGender,
+                        studentProgramme = cl.First().studentProgramme,
                         Count = cl.Count().ToString()
                     }).ToList();
                 DataTable dt = Utility.ConvertToDataTable(result);
                 studentReport.DataSource = dt;
-                studentReport.Name = "Gender";
-                studentReport.Series["Series1"].XValueMember = "Gender";
+                studentReport.Name = "Student Programme";
+                studentReport.Series["Series1"].XValueMember = "studentProgramme";
                 studentReport.Series["Series1"].YValueMembers = "Count";
                 this.studentReport.Titles.Remove(this.studentReport.Titles.FirstOrDefault());
-                this.studentReport.Titles.Add("Weekly Enrollment Chart");
+                this.studentReport.Titles.Add("Student Programme Report");
                 studentReport.Series["Series1"].IsValueShownAsLabel = true;
             }
         }
