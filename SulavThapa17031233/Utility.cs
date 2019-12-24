@@ -42,8 +42,21 @@ namespace SulavThapa17031233
             }
 
         }
-        public static string ReadFromTextFile()
+        public static string ReadFromTextFile(string filepath)
         {
+            if (File.Exists(filepath))
+            {
+                string studentData;
+                using (StreamReader reader = new StreamReader(filepath))
+                {
+                    studentData = reader.ReadToEnd();
+                }
+                if(studentData != "")
+                {
+                    studentData = "[" + studentData + "]";
+                }
+                return studentData;
+            }
             return null;
         }
         public static DataTable ConvertToDataTable()

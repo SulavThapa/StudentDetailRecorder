@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace SulavThapa17031233
 {
     public class Student
     {
+        private string _filePath = "studentData.json";
         public int indexNoStudent { get; set; }
         public string Name { get; set; }
         public string address { get; set; }
@@ -20,7 +22,10 @@ namespace SulavThapa17031233
 
         public void Add(Student info)
         {
-
+            Random random = new Random();
+            info.indexNoStudent = random.Next(1000, 9999);
+            string data = JsonConvert.SerializeObject(info, Formatting.None);
+            Utility.WriteToTextFile(_filePath, data);
         }
         public Student Edit(int id)
         {
@@ -29,8 +34,20 @@ namespace SulavThapa17031233
         }
         public void Edit(Student info)
         {
-
+            //Invoking the list method of the student and performing the remove || add || writing to the text file action
+            List<Student> list = List();
+            Student student = list.Where(x => x.indexNoStudent == info.indexNoStudent).FirstOrDefault();
+            list.Remove(student);
+            list.Add(info);
+            string studentData = JsonConvert.SerializeObject(list, Formatting.None);
+            Utility.WriteToTextFile(_filePath, studentData, false);
         }
+
+        public List<Student> List()
+        {
+            return null;
+        }
+
         public void Delete(int id)
         {
 
