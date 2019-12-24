@@ -5,19 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.IO;
+using System.ComponentModel;
 
 namespace SulavThapa17031233
 {
     class Utility
     {
-        public static void Export()
-        {
-
-        }
-        public static void Import()
-        {
-
-        }
         public static void WriteToTextFile(string filepath, string studentData, bool append =true, int count = 1)
         {
             if (!File.Exists(filepath))
@@ -59,9 +52,24 @@ namespace SulavThapa17031233
             }
             return null;
         }
-        public static DataTable ConvertToDataTable()
+        public static DataTable ConvertToDataTable<T>(IList<T> studentData)
         {
-            return null;
+            PropertyDescriptorCollection properties =
+              TypeDescriptor.GetProperties(typeof(T));
+            DataTable table = new DataTable();
+            foreach (PropertyDescriptor prop in properties)
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            if (studentData != null)
+            {
+                foreach (T item in studentData)
+                {
+                    DataRow row = table.NewRow();
+                    foreach (PropertyDescriptor prop in properties)
+                        row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                    table.Rows.Add(row);
+                }
+            }
+            return table;
         }
     }
 }

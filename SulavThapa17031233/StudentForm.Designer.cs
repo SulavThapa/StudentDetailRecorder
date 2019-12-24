@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.index = new System.Windows.Forms.Label();
             this.indexNoStudent = new System.Windows.Forms.TextBox();
             this.firstName = new System.Windows.Forms.TextBox();
@@ -221,11 +221,11 @@
             // studentDataTable
             // 
             this.studentDataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.studentDataTable.Location = new System.Drawing.Point(702, 49);
+            this.studentDataTable.Location = new System.Drawing.Point(35, 409);
             this.studentDataTable.Name = "studentDataTable";
             this.studentDataTable.RowHeadersWidth = 51;
             this.studentDataTable.RowTemplate.Height = 24;
-            this.studentDataTable.Size = new System.Drawing.Size(572, 725);
+            this.studentDataTable.Size = new System.Drawing.Size(1266, 382);
             this.studentDataTable.TabIndex = 18;
             // 
             // btnSubmit
@@ -259,7 +259,7 @@
             // studentDataTableLabel
             // 
             this.studentDataTableLabel.AutoSize = true;
-            this.studentDataTableLabel.Location = new System.Drawing.Point(699, 18);
+            this.studentDataTableLabel.Location = new System.Drawing.Point(19, 389);
             this.studentDataTableLabel.Name = "studentDataTableLabel";
             this.studentDataTableLabel.Size = new System.Drawing.Size(131, 17);
             this.studentDataTableLabel.TabIndex = 22;
@@ -283,25 +283,24 @@
             // 
             // studentReport
             // 
-            chartArea7.Name = "ChartArea1";
-            this.studentReport.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.studentReport.Legends.Add(legend7);
-            this.studentReport.Location = new System.Drawing.Point(35, 409);
+            chartArea5.Name = "ChartArea1";
+            this.studentReport.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.studentReport.Legends.Add(legend5);
+            this.studentReport.Location = new System.Drawing.Point(722, 29);
             this.studentReport.Name = "studentReport";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.studentReport.Series.Add(series7);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.studentReport.Series.Add(series5);
             this.studentReport.Size = new System.Drawing.Size(612, 365);
             this.studentReport.TabIndex = 25;
             this.studentReport.Text = "Student Report";
-            this.studentReport.Click += new System.EventHandler(this.studentReport_Click);
             // 
             // Chartlabel
             // 
             this.Chartlabel.AutoSize = true;
-            this.Chartlabel.Location = new System.Drawing.Point(18, 389);
+            this.Chartlabel.Location = new System.Drawing.Point(699, 9);
             this.Chartlabel.Name = "Chartlabel";
             this.Chartlabel.Size = new System.Drawing.Size(104, 17);
             this.Chartlabel.TabIndex = 26;
@@ -311,7 +310,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1286, 803);
+            this.ClientSize = new System.Drawing.Size(1346, 803);
             this.Controls.Add(this.Chartlabel);
             this.Controls.Add(this.studentReport);
             this.Controls.Add(this.registrationDate);

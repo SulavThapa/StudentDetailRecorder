@@ -45,21 +45,29 @@ namespace SulavThapa17031233
 
         public List<Student> List()
         {
+            string path = Utility.ReadFromTextFile(_filePath);
+            if (path != null)
+            {
+                List<Student> lst = JsonConvert.DeserializeObject<List<Student>>(path);
+                return lst;
+            }
             return null;
         }
 
         public void Delete(int id)
         {
-
+            //Invoking the list of student to delete it from its index number
+            List<Student> list = List();
+            Student student = list.Where(x => x.indexNoStudent == indexNoStudent).FirstOrDefault();
+            list.Remove(student);
+            int count = list.Count;
+            string studentData = JsonConvert.SerializeObject(list, Formatting.None);
+            Utility.WriteToTextFile(_filePath, studentData, false,count);
         }
         public Student Detail(int id)
         {
             Student obj = new Student();
             return obj;
         }
- /*       public List<Student> List()
-        {
-
-        }*/
     }
 }

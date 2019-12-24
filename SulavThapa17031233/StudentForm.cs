@@ -20,11 +20,6 @@ namespace SulavThapa17031233
             btnUpdate.Visible = false;
         }
 
-        private void BindGrid()
-        {
-
-        }
-
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             //making the refrence object of the student made in the student class
@@ -58,8 +53,16 @@ namespace SulavThapa17031233
             studentGender.SelectedItem = null;
             registrationDate.Value = DateTime.Today;
         }
-
-        private void studentReport_Click(object sender, EventArgs e)
+        private void BindGrid()
+        {
+            //Binding the data to the datatable
+            Student obj = new Student();
+            List<Student> studentList = obj.List();
+            DataTable datatable = Utility.ConvertToDataTable(studentList);
+            studentDataTable.DataSource = datatable;
+            BindChart(studentList);
+        }
+        private void BindChart(List<Student> lists)
         {
 
         }
