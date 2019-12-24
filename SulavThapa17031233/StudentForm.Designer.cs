@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.firstName = new System.Windows.Forms.TextBox();
             this.lastName = new System.Windows.Forms.TextBox();
             this.address = new System.Windows.Forms.TextBox();
@@ -219,6 +219,7 @@
             this.studentDataTable.RowTemplate.Height = 24;
             this.studentDataTable.Size = new System.Drawing.Size(1322, 382);
             this.studentDataTable.TabIndex = 18;
+            this.studentDataTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentDataTable_CellContentClick);
             // 
             // btnSubmit
             // 
@@ -238,6 +239,7 @@
             this.btnUpdate.TabIndex = 20;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCancel
             // 
@@ -275,16 +277,16 @@
             // 
             // studentReport
             // 
-            chartArea2.Name = "ChartArea1";
-            this.studentReport.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.studentReport.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.studentReport.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.studentReport.Legends.Add(legend4);
             this.studentReport.Location = new System.Drawing.Point(722, 29);
             this.studentReport.Name = "studentReport";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.studentReport.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.studentReport.Series.Add(series4);
             this.studentReport.Size = new System.Drawing.Size(612, 365);
             this.studentReport.TabIndex = 25;
             this.studentReport.Text = "Student Report";

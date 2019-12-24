@@ -61,12 +61,83 @@ namespace SulavThapa17031233
             DataTable datatable = Utility.ConvertToDataTable(studentList);
             studentDataTable.DataSource = datatable;
             BindChart(studentList);
-            btnUpdate.Visible = true;
-
         }
         private void BindChart(List<Student> lists)
         {
 
+        }
+
+        private void studentDataTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //making the student object
+            Student obj = new Student();
+            if(e.ColumnIndex == 0)
+            {
+                string values = studentDataTable[2, e.RowIndex].Value.ToString();
+                int num = 0;
+                if (String.IsNullOrEmpty(values))
+                {
+                    MessageBox.Show("Invalid Data");
+                }
+                else
+                {
+                    num = int.Parse(values);
+                    Student student = obj.List().Where(x => x.indexNoStudent == num).FirstOrDefault();
+                    firstName.Text = student.indexNoStudent.ToString();
+                    lastName.Text = student.Name.Split(' ')[0];
+                    address.Text = student.Name.Split(' ')[1];
+                    email.Text = student.email;
+                    studentProgramme.SelectedItem = student.studentProgramme;
+                    studentContactNo.Text = student.studentContactNo;
+                    studentGender.SelectedItem = student.studentGender;
+                    btnSubmit.Visible = false;
+                    btnUpdate.Visible = true;
+                }
+            }
+            else if (e.ColumnIndex == 1)
+            {
+                string values = studentDataTable[2, e.RowIndex].Value.ToString();
+                if (String.IsNullOrEmpty(values))
+                {
+                    MessageBox.Show("Cant Delete An Empty Row!");
+                }else
+                {
+                    string message = "Do you want to Delete this Data?";
+                    string title = "Confirmation";
+                    MessageBoxButtons button = MessageBoxButtons.OKCancel;
+                    DialogResult result = MessageBox.Show(message, title, button);
+                    if (result == DialogResult.OK)
+                    {
+                        //get the value of the clicked rows id column
+                        string value = studentDataTable[2, e.RowIndex].Value.ToString();
+                        obj.Delete(int.Parse(value));
+                        BindGrid();
+                        MessageBox.Show("Record Successfully Deleted");
+                    }
+                }
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            //making the refrence object of the student made in the student class
+            Student obj = new Student();
+            //Adding the data from the textbox to the object
+            string firstname = firstName.Text;
+            string lastname = lastName.Text;
+            obj.Name = firstname + " " + lastname;
+            obj.address = address.Text;
+            obj.email = email.Text;
+            obj.studentProgramme = studentProgramme.Text;
+            obj.studentBirthDate = studentBirthDate.Value;
+            obj.studentContactNo = studentContactNo.Text;
+            obj.studentGender = studentGender.SelectedItem.ToString();
+            obj.registrationDate = registrationDate.Value;
+            obj.Add(obj);
+            BindGrid();
+            Clear();
+            btnUpdate.Visible = false;
+            btnSubmit.Visible = true;
         }
     }
 }

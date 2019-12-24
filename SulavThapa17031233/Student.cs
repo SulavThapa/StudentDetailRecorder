@@ -58,11 +58,11 @@ namespace SulavThapa17031233
         {
             //Invoking the list of student to delete it from its index number
             List<Student> list = List();
-            Student student = list.Where(x => x.indexNoStudent == indexNoStudent).FirstOrDefault();
+            Student student = list.Where(x => x.indexNoStudent == id).FirstOrDefault();
             list.Remove(student);
             int count = list.Count;
             string studentData = JsonConvert.SerializeObject(list, Formatting.None);
-            Utility.WriteToTextFile(_filePath, studentData, false,count);
+            Utility.WriteToTextFile(_filePath, studentData, false ,count);
         }
         public Student Detail(int id)
         {
