@@ -43,6 +43,7 @@ namespace SulavThapa17031233
         private void Clear()
         {
             //clearing all the text view
+            txtId.Text = "";
             firstName.Text = "";
             lastName.Text = "";
             address.Text = "";
@@ -62,11 +63,6 @@ namespace SulavThapa17031233
             studentDataTable.DataSource = datatable;
             BindChart(studentList);
         }
-        private void BindChart(List<Student> lists)
-        {
-
-        }
-
         private void studentDataTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //making the student object
@@ -83,6 +79,7 @@ namespace SulavThapa17031233
                 {
                     num = int.Parse(values);
                     Student student = obj.List().Where(x => x.indexNoStudent == num).FirstOrDefault();
+                    txtId.Text = student.indexNoStudent.ToString();
                     firstName.Text = student.indexNoStudent.ToString();
                     lastName.Text = student.Name.Split(' ')[0];
                     address.Text = student.Name.Split(' ')[1];
@@ -123,6 +120,7 @@ namespace SulavThapa17031233
             //making the refrence object of the student made in the student class
             Student obj = new Student();
             //Adding the data from the textbox to the object
+            obj.indexNoStudent = int.Parse(txtId.Text);
             string firstname = firstName.Text;
             string lastname = lastName.Text;
             obj.Name = firstname + " " + lastname;
@@ -133,11 +131,38 @@ namespace SulavThapa17031233
             obj.studentContactNo = studentContactNo.Text;
             obj.studentGender = studentGender.SelectedItem.ToString();
             obj.registrationDate = registrationDate.Value;
-            obj.Add(obj);
+            obj.Edit(obj);
             BindGrid();
             Clear();
             btnUpdate.Visible = false;
             btnSubmit.Visible = true;
+        }
+        private void BindChart(List<Student> lst)
+        {
+            //Displaying the chart acc. to the gender of the student
+            if (lst != null)
+            {
+                var result = lst
+                    .GroupBy(l => l.studentGender)
+                    .Select(cl => new
+                    {
+                        Gender = cl.First().studentGender,
+                        Count = cl.Count().ToString()
+                    }).ToList();
+                DataTable dt = Utility.ConvertToDataTable(result);
+                studentReport.DataSource = dt;
+                studentReport.Name = "Gender";
+                studentReport.Series["Series1"].XValueMember = "Gender";
+                studentReport.Series["Series1"].YValueMembers = "Count";
+                this.studentReport.Titles.Remove(this.studentReport.Titles.FirstOrDefault());
+                this.studentReport.Titles.Add("Weekly Enrollment Chart");
+                studentReport.Series["Series1"].IsValueShownAsLabel = true;
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }

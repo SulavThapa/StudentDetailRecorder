@@ -19,7 +19,6 @@ namespace SulavThapa17031233
         public string studentContactNo { get; set; }
         public string studentGender { get; set; }
         public DateTime registrationDate { get; set; }
-
         public void Add(Student info)
         {
             Random random = new Random();

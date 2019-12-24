@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.firstName = new System.Windows.Forms.TextBox();
             this.lastName = new System.Windows.Forms.TextBox();
             this.address = new System.Windows.Forms.TextBox();
@@ -48,6 +48,8 @@
             this.sContact = new System.Windows.Forms.Label();
             this.sGender = new System.Windows.Forms.Label();
             this.studentDataTable = new System.Windows.Forms.DataGridView();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -57,8 +59,7 @@
             this.studentReport = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Chartlabel = new System.Windows.Forms.Label();
             this.heading = new System.Windows.Forms.Label();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentReport)).BeginInit();
             this.SuspendLayout();
@@ -221,6 +222,24 @@
             this.studentDataTable.TabIndex = 18;
             this.studentDataTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentDataTable_CellContentClick);
             // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "";
+            this.Edit.Width = 50;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "";
+            this.Delete.Width = 60;
+            // 
             // btnSubmit
             // 
             this.btnSubmit.Location = new System.Drawing.Point(404, 340);
@@ -249,6 +268,7 @@
             this.btnCancel.TabIndex = 21;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // studentDataTableLabel
             // 
@@ -277,16 +297,16 @@
             // 
             // studentReport
             // 
-            chartArea4.Name = "ChartArea1";
-            this.studentReport.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.studentReport.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.studentReport.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.studentReport.Legends.Add(legend2);
             this.studentReport.Location = new System.Drawing.Point(722, 29);
             this.studentReport.Name = "studentReport";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.studentReport.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.studentReport.Series.Add(series2);
             this.studentReport.Size = new System.Drawing.Size(612, 365);
             this.studentReport.TabIndex = 25;
             this.studentReport.Text = "Student Report";
@@ -310,29 +330,20 @@
             this.heading.TabIndex = 27;
             this.heading.Text = "Student Detail Form";
             // 
-            // Edit
+            // txtId
             // 
-            this.Edit.HeaderText = "Edit";
-            this.Edit.MinimumWidth = 6;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Text = "";
-            this.Edit.Width = 50;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "";
-            this.Delete.Width = 60;
+            this.txtId.Location = new System.Drawing.Point(536, 45);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 22);
+            this.txtId.TabIndex = 28;
+            this.txtId.Visible = false;
             // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1346, 803);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.heading);
             this.Controls.Add(this.Chartlabel);
             this.Controls.Add(this.studentReport);
@@ -399,6 +410,7 @@
         private System.Windows.Forms.Label heading;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.TextBox txtId;
     }
 }
 
