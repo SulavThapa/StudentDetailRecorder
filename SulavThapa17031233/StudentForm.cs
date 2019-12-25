@@ -80,9 +80,9 @@ namespace SulavThapa17031233
                     num = int.Parse(values);
                     Student student = obj.List().Where(x => x.indexNoStudent == num).FirstOrDefault();
                     txtId.Text = student.indexNoStudent.ToString();
-                    firstName.Text = student.indexNoStudent.ToString();
-                    lastName.Text = student.Name.Split(' ')[0];
-                    address.Text = student.Name.Split(' ')[1];
+                    firstName.Text = student.Name.Split(' ')[0];
+                    lastName.Text = student.Name.Split(' ')[1];
+                    address.Text = student.address.ToString();
                     email.Text = student.email;
                     studentProgramme.SelectedItem = student.studentProgramme;
                     studentContactNo.Text = student.studentContactNo;
