@@ -62,6 +62,19 @@ namespace SulavThapa17031233
             DataTable datatable = Utility.ConvertToDataTable(studentList);
             studentDataTable.DataSource = datatable;
             BindChart(studentList);
+            BindWeeklyGrid(studentList);
+        }
+        private void BindWeeklyGrid(List<Student> lst)
+        {
+            var result = lst
+                    .GroupBy(l => l.studentProgramme)
+                    .Select(cl => new
+                    {
+                        studentProgramme = cl.First().studentProgramme,
+                        Count = cl.Count().ToString()
+                    }).ToList();
+            DataTable dt = Utility.ConvertToDataTable(result);
+            studentWeeklyReport.DataSource = dt;
         }
         private void studentDataTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -139,7 +152,7 @@ namespace SulavThapa17031233
         }
         private void BindChart(List<Student> lst)
         {
-            //Displaying the chart acc. to the gender of the student
+            //Displaying the chart according to the Programme of the student
             if (lst != null)
             {
                 var result = lst

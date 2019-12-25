@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.firstName = new System.Windows.Forms.TextBox();
             this.lastName = new System.Windows.Forms.TextBox();
             this.address = new System.Windows.Forms.TextBox();
@@ -60,11 +60,11 @@
             this.Chartlabel = new System.Windows.Forms.Label();
             this.heading = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.studentWeeklyReport = new System.Windows.Forms.DataGridView();
             this.lblReport = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentReport)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentWeeklyReport)).BeginInit();
             this.SuspendLayout();
             // 
             // firstName
@@ -211,6 +211,7 @@
             // 
             this.studentDataTable.AllowUserToResizeColumns = false;
             this.studentDataTable.AllowUserToResizeRows = false;
+            this.studentDataTable.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.studentDataTable.ColumnHeadersHeight = 29;
             this.studentDataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.studentDataTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -302,17 +303,17 @@
             // 
             // studentReport
             // 
-            chartArea1.Name = "ChartArea1";
-            this.studentReport.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.studentReport.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.studentReport.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.studentReport.Legends.Add(legend3);
             this.studentReport.Location = new System.Drawing.Point(722, 21);
             this.studentReport.Name = "studentReport";
-            this.studentReport.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.studentReport.Series.Add(series1);
+            this.studentReport.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.studentReport.Series.Add(series3);
             this.studentReport.Size = new System.Drawing.Size(612, 365);
             this.studentReport.TabIndex = 25;
             this.studentReport.Text = "Student Report";
@@ -344,15 +345,21 @@
             this.txtId.TabIndex = 28;
             this.txtId.Visible = false;
             // 
-            // dataGridView1
+            // studentWeeklyReport
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(950, 409);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(384, 382);
-            this.dataGridView1.TabIndex = 29;
+            this.studentWeeklyReport.AllowUserToResizeColumns = false;
+            this.studentWeeklyReport.AllowUserToResizeRows = false;
+            this.studentWeeklyReport.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.studentWeeklyReport.ColumnHeadersHeight = 29;
+            this.studentWeeklyReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.studentWeeklyReport.Location = new System.Drawing.Point(940, 409);
+            this.studentWeeklyReport.Name = "studentWeeklyReport";
+            this.studentWeeklyReport.ReadOnly = true;
+            this.studentWeeklyReport.RowHeadersWidth = 51;
+            this.studentWeeklyReport.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.studentWeeklyReport.RowTemplate.Height = 24;
+            this.studentWeeklyReport.Size = new System.Drawing.Size(394, 382);
+            this.studentWeeklyReport.TabIndex = 29;
             // 
             // lblReport
             // 
@@ -369,7 +376,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1346, 803);
             this.Controls.Add(this.lblReport);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.studentWeeklyReport);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.heading);
             this.Controls.Add(this.Chartlabel);
@@ -403,7 +410,7 @@
             this.Text = "Student Detail Form";
             ((System.ComponentModel.ISupportInitialize)(this.studentDataTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentReport)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentWeeklyReport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,7 +446,7 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView studentWeeklyReport;
         private System.Windows.Forms.Label lblReport;
     }
 }
