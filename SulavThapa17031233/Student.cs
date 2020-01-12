@@ -68,5 +68,266 @@ namespace SulavThapa17031233
             Student obj = new Student();
             return obj;
         }
+
+        public List<Student> sortByFirstNameAsc(List<Student> studentList)
+        {
+            int id;
+            string name;
+            string address;
+            string email;
+            string programme;
+            DateTime dob;
+            string contact;
+            string gender;
+            DateTime regDate;
+
+            if (studentList != null)
+            {
+                for (int i = 0; i < studentList.Count - 1; i++)
+                {
+                    for (int j = i + 1; j < studentList.Count; j++)
+                    {
+                        if (studentList[i].Name.CompareTo(studentList[j].Name) > 0)
+                        {
+
+                            id = studentList[i].indexNoStudent;
+                            studentList[i].indexNoStudent = studentList[j].indexNoStudent;
+                            studentList[j].indexNoStudent = id;
+
+                            regDate = studentList[i].registrationDate;
+                            studentList[i].registrationDate = studentList[j].registrationDate;
+                            studentList[j].registrationDate = regDate;
+
+                            name = studentList[i].Name;
+                            studentList[i].Name = studentList[j].Name;
+                            studentList[j].Name = name;
+
+                            dob = studentList[i].studentBirthDate;
+                            studentList[i].studentBirthDate = studentList[j].studentBirthDate;
+                            studentList[j].studentBirthDate = dob;
+
+                            address = studentList[i].address;
+                            studentList[i].address = studentList[j].address;
+                            studentList[j].address = address;
+
+                            gender = studentList[i].studentGender;
+                            studentList[i].studentGender = studentList[j].studentGender;
+                            studentList[j].studentGender = gender;
+
+                            contact = studentList[i].studentContactNo;
+                            studentList[i].studentContactNo = studentList[j].studentContactNo;
+                            studentList[j].studentContactNo = contact;
+
+                            programme = studentList[i].studentProgramme;
+                            studentList[i].studentProgramme = studentList[j].studentProgramme;
+                            studentList[j].studentProgramme = programme;
+
+                            email = studentList[i].email;
+                            studentList[i].email = studentList[j].email;
+                            studentList[j].email = email;
+
+                        }
+                    }
+                }
+                return studentList;
+            }
+            return null;
+        }
+
+        public List<Student> sortByFirstNameDesc(List<Student> studentList)
+        {
+            int id;
+            string name;
+            string address;
+            string email;
+            string programme;
+            DateTime dob;
+            string contact;
+            string gender;
+            DateTime regDate;
+
+            if (studentList != null)
+            {
+                for (int i = 0; i < studentList.Count - 1; i++)
+                {
+                    for (int j = i + 1; j < studentList.Count; j++)
+                    {
+                        if (studentList[i].Name.CompareTo(studentList[j].Name) < 0)
+                        {
+
+                            id = studentList[i].indexNoStudent;
+                            studentList[i].indexNoStudent = studentList[j].indexNoStudent;
+                            studentList[j].indexNoStudent = id;
+
+                            regDate = studentList[i].registrationDate;
+                            studentList[i].registrationDate = studentList[j].registrationDate;
+                            studentList[j].registrationDate = regDate;
+
+                            name = studentList[i].Name;
+                            studentList[i].Name = studentList[j].Name;
+                            studentList[j].Name = name;
+
+                            dob = studentList[i].studentBirthDate;
+                            studentList[i].studentBirthDate = studentList[j].studentBirthDate;
+                            studentList[j].studentBirthDate = dob;
+
+                            address = studentList[i].address;
+                            studentList[i].address = studentList[j].address;
+                            studentList[j].address = address;
+
+                            gender = studentList[i].studentGender;
+                            studentList[i].studentGender = studentList[j].studentGender;
+                            studentList[j].studentGender = gender;
+
+                            contact = studentList[i].studentContactNo;
+                            studentList[i].studentContactNo = studentList[j].studentContactNo;
+                            studentList[j].studentContactNo = contact;
+
+                            programme = studentList[i].studentProgramme;
+                            studentList[i].studentProgramme = studentList[j].studentProgramme;
+                            studentList[j].studentProgramme = programme;
+
+                            email = studentList[i].email;
+                            studentList[i].email = studentList[j].email;
+                            studentList[j].email = email;
+
+                        }
+                    }
+                }
+                return studentList;
+            }
+            return null;
+        }
+
+        public List<Student> sortByRegistrationDateDesc(List<Student> studentList)
+        {
+            int id;
+            string name;
+            string address;
+            string email;
+            string programme;
+            DateTime dob;
+            string contact;
+            string gender;
+            DateTime regDate;
+
+            if (studentList != null)
+            {
+                for (int i = 0; i < studentList.Count - 1; i++)
+                {
+                    for (int j = i + 1; j < studentList.Count; j++)
+                    {
+                        if (studentList[i].registrationDate.CompareTo(studentList[j].registrationDate) < 0)
+                        {
+
+                            id = studentList[i].indexNoStudent;
+                            studentList[i].indexNoStudent = studentList[j].indexNoStudent;
+                            studentList[j].indexNoStudent = id;
+
+                            regDate = studentList[i].registrationDate;
+                            studentList[i].registrationDate = studentList[j].registrationDate;
+                            studentList[j].registrationDate = regDate;
+
+                            name = studentList[i].Name;
+                            studentList[i].Name = studentList[j].Name;
+                            studentList[j].Name = name;
+
+                            dob = studentList[i].studentBirthDate;
+                            studentList[i].studentBirthDate = studentList[j].studentBirthDate;
+                            studentList[j].studentBirthDate = dob;
+
+                            address = studentList[i].address;
+                            studentList[i].address = studentList[j].address;
+                            studentList[j].address = address;
+
+                            gender = studentList[i].studentGender;
+                            studentList[i].studentGender = studentList[j].studentGender;
+                            studentList[j].studentGender = gender;
+
+                            contact = studentList[i].studentContactNo;
+                            studentList[i].studentContactNo = studentList[j].studentContactNo;
+                            studentList[j].studentContactNo = contact;
+
+                            programme = studentList[i].studentProgramme;
+                            studentList[i].studentProgramme = studentList[j].studentProgramme;
+                            studentList[j].studentProgramme = programme;
+
+                            email = studentList[i].email;
+                            studentList[i].email = studentList[j].email;
+                            studentList[j].email = email;
+
+                        }
+                    }
+                }
+                return studentList;
+            }
+            return null;
+        }
+
+        public List<Student> sortByRegistrationDateAsc(List<Student> studentList)
+        {
+            int id;
+            string name;
+            string address;
+            string email;
+            string programme;
+            DateTime dob;
+            string contact;
+            string gender;
+            DateTime regDate;
+
+            if (studentList != null)
+            {
+                for (int i = 0; i < studentList.Count - 1; i++)
+                {
+                    for (int j = i + 1; j < studentList.Count; j++)
+                    {
+                        if (studentList[i].registrationDate.CompareTo(studentList[j].registrationDate) > 0)
+                        {
+
+                            id = studentList[i].indexNoStudent;
+                            studentList[i].indexNoStudent = studentList[j].indexNoStudent;
+                            studentList[j].indexNoStudent = id;
+
+                            regDate = studentList[i].registrationDate;
+                            studentList[i].registrationDate = studentList[j].registrationDate;
+                            studentList[j].registrationDate = regDate;
+
+                            name = studentList[i].Name;
+                            studentList[i].Name = studentList[j].Name;
+                            studentList[j].Name = name;
+
+                            dob = studentList[i].studentBirthDate;
+                            studentList[i].studentBirthDate = studentList[j].studentBirthDate;
+                            studentList[j].studentBirthDate = dob;
+
+                            address = studentList[i].address;
+                            studentList[i].address = studentList[j].address;
+                            studentList[j].address = address;
+
+                            gender = studentList[i].studentGender;
+                            studentList[i].studentGender = studentList[j].studentGender;
+                            studentList[j].studentGender = gender;
+
+                            contact = studentList[i].studentContactNo;
+                            studentList[i].studentContactNo = studentList[j].studentContactNo;
+                            studentList[j].studentContactNo = contact;
+
+                            programme = studentList[i].studentProgramme;
+                            studentList[i].studentProgramme = studentList[j].studentProgramme;
+                            studentList[j].studentProgramme = programme;
+
+                            email = studentList[i].email;
+                            studentList[i].email = studentList[j].email;
+                            studentList[j].email = email;
+
+                        }
+                    }
+                }
+                return studentList;
+            }
+            return null;
+        }
     }
 }
+

@@ -46,6 +46,7 @@ namespace SulavThapa17031233
                 }
                 if(studentData != "")
                 {
+                    Console.WriteLine(studentData);
                     studentData = "[" + studentData + "]";
                 }
                 return studentData;

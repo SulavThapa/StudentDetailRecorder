@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SulavThapa17031233
@@ -63,6 +59,7 @@ namespace SulavThapa17031233
             studentDataTable.DataSource = datatable;
             BindChart(studentList);
             BindWeeklyGrid(studentList);
+
         }
         private void BindWeeklyGrid(List<Student> lst)
         {
@@ -80,7 +77,7 @@ namespace SulavThapa17031233
         {
             //making the student object
             Student obj = new Student();
-            if(e.ColumnIndex == 0)
+            if (e.ColumnIndex == 0)
             {
                 string values = studentDataTable[2, e.RowIndex].Value.ToString();
                 int num = 0;
@@ -110,7 +107,8 @@ namespace SulavThapa17031233
                 if (String.IsNullOrEmpty(values))
                 {
                     MessageBox.Show("Cant Delete An Empty Row!");
-                }else
+                }
+                else
                 {
                     string message = "Do you want to Delete this Data?";
                     string title = "Confirmation";
@@ -167,6 +165,8 @@ namespace SulavThapa17031233
                 studentReport.Name = "Student Programme";
                 studentReport.Series["Series1"].XValueMember = "studentProgramme";
                 studentReport.Series["Series1"].YValueMembers = "Count";
+                studentReport.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0;
+                studentReport.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0;
                 this.studentReport.Titles.Remove(this.studentReport.Titles.FirstOrDefault());
                 this.studentReport.Titles.Add("Student Programme Report");
                 studentReport.Series["Series1"].IsValueShownAsLabel = true;
@@ -176,6 +176,57 @@ namespace SulavThapa17031233
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Clear();
+            string[] arr = new string[50];
+            DateTime[] test = new DateTime[studentDataTable.Rows.Count - 1];
+            for (int i = 0; i < studentDataTable.Rows.Count-1; i++)
+            {
+                string data = (string)studentDataTable[3, i].Value;
+                //Console.WriteLine(data);
+                arr[i] = data;
+                DateTime data1 = (DateTime)studentDataTable[10, i].Value;
+                //Console.WriteLine(data1);
+                test[i] = data1;
+                Console.WriteLine(arr[i]);
+                //Console.WriteLine(test[i]);
+
+            }
+
+            for(int i = 0; i < test.Length; i++)
+            {
+                Console.WriteLine(test[i]);
+            }
+
+        }
+
+        private void sortDataTable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Student student = new Student();
+            List<Student> studentList = student.List();
+            if (sortDataTable.SelectedItem.ToString().Equals("Name(Ascending)"))
+            {
+                List<Student> list = student.sortByFirstNameAsc(studentList);
+                DataTable dt = Utility.ConvertToDataTable(list);
+                studentDataTable.DataSource = dt;
+            }
+            else if (sortDataTable.SelectedItem.ToString().Equals("Name(Descending)"))
+            {
+                List<Student> list = student.sortByFirstNameDesc(studentList);
+                DataTable dt = Utility.ConvertToDataTable(list);
+                studentDataTable.DataSource = dt;
+            }
+            else if (sortDataTable.SelectedItem.ToString().Equals("RegistrationDate (Ascending)"))
+            {
+                List<Student> list = student.sortByRegistrationDateAsc(studentList);
+                DataTable dt = Utility.ConvertToDataTable(list);
+                studentDataTable.DataSource = dt;
+            }
+            else if (sortDataTable.SelectedItem.ToString().Equals("RegistrationDate (Descending)"))
+            {
+                List<Student> list = student.sortByRegistrationDateDesc(studentList);
+                DataTable dt = Utility.ConvertToDataTable(list);
+                studentDataTable.DataSource = dt;
+            }
         }
     }
 }
+
