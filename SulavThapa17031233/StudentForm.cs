@@ -58,20 +58,6 @@ namespace SulavThapa17031233
             DataTable datatable = Utility.ConvertToDataTable(studentList);
             studentDataTable.DataSource = datatable;
             BindChart(studentList);
-            BindWeeklyGrid(studentList);
-
-        }
-        private void BindWeeklyGrid(List<Student> lst)
-        {
-            var result = lst
-                    .GroupBy(l => l.studentProgramme)
-                    .Select(cl => new
-                    {
-                        studentProgramme = cl.First().studentProgramme,
-                        Count = cl.Count().ToString()
-                    }).ToList();
-            DataTable dt = Utility.ConvertToDataTable(result);
-            studentWeeklyReport.DataSource = dt;
         }
         private void studentDataTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -148,53 +134,9 @@ namespace SulavThapa17031233
             btnUpdate.Visible = false;
             btnSubmit.Visible = true;
         }
-        private void BindChart(List<Student> lst)
-        {
-            //Displaying the chart according to the Programme of the student
-            if (lst != null)
-            {
-                var result = lst
-                    .GroupBy(l => l.studentProgramme)
-                    .Select(cl => new
-                    {
-                        studentProgramme = cl.First().studentProgramme,
-                        Count = cl.Count().ToString()
-                    }).ToList();
-                DataTable dt = Utility.ConvertToDataTable(result);
-                studentReport.DataSource = dt;
-                studentReport.Name = "Student Programme";
-                studentReport.Series["Series1"].XValueMember = "studentProgramme";
-                studentReport.Series["Series1"].YValueMembers = "Count";
-                studentReport.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0;
-                studentReport.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0;
-                this.studentReport.Titles.Remove(this.studentReport.Titles.FirstOrDefault());
-                this.studentReport.Titles.Add("Student Programme Report");
-                studentReport.Series["Series1"].IsValueShownAsLabel = true;
-            }
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Clear();
-            string[] arr = new string[50];
-            DateTime[] test = new DateTime[studentDataTable.Rows.Count - 1];
-            for (int i = 0; i < studentDataTable.Rows.Count-1; i++)
-            {
-                string data = (string)studentDataTable[3, i].Value;
-                //Console.WriteLine(data);
-                arr[i] = data;
-                DateTime data1 = (DateTime)studentDataTable[10, i].Value;
-                //Console.WriteLine(data1);
-                test[i] = data1;
-                Console.WriteLine(arr[i]);
-                //Console.WriteLine(test[i]);
-
-            }
-
-            for(int i = 0; i < test.Length; i++)
-            {
-                Console.WriteLine(test[i]);
-            }
 
         }
 
@@ -227,6 +169,77 @@ namespace SulavThapa17031233
                 studentDataTable.DataSource = dt;
             }
         }
+        private void BindChart(List<Student> lst)
+        {
+            //Displaying the chart according to the Programme of the student
+            if (lst != null)
+            {
+                var result = lst
+                    .GroupBy(l => l.studentProgramme)
+                    .Select(cl => new
+                    {
+                        studentProgramme = cl.First().studentProgramme,
+                        Count = cl.Count().ToString()
+                    }).ToList();
+                DataTable dt = Utility.ConvertToDataTable(result);
+                studentReport.DataSource = dt;
+                studentReport.Name = "Student Programme";
+                studentReport.Series["Series1"].XValueMember = "studentProgramme";
+                studentReport.Series["Series1"].YValueMembers = "Count";
+                studentReport.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0;
+                studentReport.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0;
+                this.studentReport.Titles.Remove(this.studentReport.Titles.FirstOrDefault());
+                this.studentReport.Titles.Add("Student Programme Report");
+                studentReport.Series["Series1"].IsValueShownAsLabel = true;
+            }
+        }
+        private void weeklyReportDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime selectedDate = weeklyReportDatePicker.Value;
+            var cultureCulture = System.Threading.Thread.CurrentThread.CurrentCulture;
+            var difference = selectedDate.DayOfWeek - cultureCulture.DateTimeFormat.FirstDayOfWeek;
+            if (difference < 0)
+                difference += 7;
+            var first_day_week = selectedDate.AddDays(-difference).Date;
+            var last_day_week = selectedDate.AddDays(7);
+            studentWeeklyReport.Rows.Clear();
+            Student obj = new Student();
+            List<Student> listStudents = obj.List();
+            var convertStudents = listStudents.Where(s => s.registrationDate >= first_day_week && s.registrationDate < last_day_week);
+
+            BindChart(convertStudents.ToList());
+
+            int computing = 0;
+            int networking = 0;
+            int multimedia = 0;
+
+            foreach (Student stu in convertStudents)
+            {
+                if (stu.studentProgramme == "Computing")
+                {
+                    computing += 1;
+                }
+                else if (stu.studentProgramme == "Multimedia")
+                {
+                    multimedia += 1;
+                }
+                else if (stu.studentProgramme == "Networking")
+                {
+                    networking += 1;
+                }
+            }
+
+
+            studentWeeklyReport.Rows.Add(new Object[] { "Computing", computing });
+            studentWeeklyReport.Rows.Add(new Object[] { "Multimedia", multimedia });
+            studentWeeklyReport.Rows.Add(new Object[] { "Networking", networking });
+
+            if (computing == 0 && networking == 0 && multimedia == 0)
+            {
+                //Nothing to plot here
+            }
+        }
+
     }
 }
 

@@ -65,6 +65,8 @@
             this.lblReport = new System.Windows.Forms.Label();
             this.lblsort = new System.Windows.Forms.Label();
             this.sortDataTable = new System.Windows.Forms.ComboBox();
+            this.weeklyReportDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.lbldatepicker = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentWeeklyReport)).BeginInit();
@@ -73,7 +75,7 @@
             // firstName
             // 
             this.firstName.Location = new System.Drawing.Point(117, 84);
-            this.firstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.firstName.Margin = new System.Windows.Forms.Padding(2);
             this.firstName.Name = "firstName";
             this.firstName.Size = new System.Drawing.Size(76, 20);
             this.firstName.TabIndex = 2;
@@ -81,7 +83,7 @@
             // lastName
             // 
             this.lastName.Location = new System.Drawing.Point(354, 84);
-            this.lastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lastName.Margin = new System.Windows.Forms.Padding(2);
             this.lastName.Name = "lastName";
             this.lastName.Size = new System.Drawing.Size(76, 20);
             this.lastName.TabIndex = 3;
@@ -89,7 +91,7 @@
             // address
             // 
             this.address.Location = new System.Drawing.Point(117, 135);
-            this.address.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.address.Margin = new System.Windows.Forms.Padding(2);
             this.address.Name = "address";
             this.address.Size = new System.Drawing.Size(76, 20);
             this.address.TabIndex = 4;
@@ -97,7 +99,7 @@
             // email
             // 
             this.email.Location = new System.Drawing.Point(354, 134);
-            this.email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.email.Margin = new System.Windows.Forms.Padding(2);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(76, 20);
             this.email.TabIndex = 5;
@@ -110,7 +112,7 @@
             "Multimedia",
             "Networking"});
             this.studentProgramme.Location = new System.Drawing.Point(117, 188);
-            this.studentProgramme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.studentProgramme.Margin = new System.Windows.Forms.Padding(2);
             this.studentProgramme.Name = "studentProgramme";
             this.studentProgramme.Size = new System.Drawing.Size(92, 21);
             this.studentProgramme.TabIndex = 6;
@@ -119,7 +121,7 @@
             // studentBirthDate
             // 
             this.studentBirthDate.Location = new System.Drawing.Point(354, 188);
-            this.studentBirthDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.studentBirthDate.Margin = new System.Windows.Forms.Padding(2);
             this.studentBirthDate.Name = "studentBirthDate";
             this.studentBirthDate.Size = new System.Drawing.Size(151, 20);
             this.studentBirthDate.TabIndex = 7;
@@ -127,7 +129,7 @@
             // studentContactNo
             // 
             this.studentContactNo.Location = new System.Drawing.Point(117, 233);
-            this.studentContactNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.studentContactNo.Margin = new System.Windows.Forms.Padding(2);
             this.studentContactNo.Name = "studentContactNo";
             this.studentContactNo.Size = new System.Drawing.Size(76, 20);
             this.studentContactNo.TabIndex = 8;
@@ -140,7 +142,7 @@
             "Female",
             "Other"});
             this.studentGender.Location = new System.Drawing.Point(354, 233);
-            this.studentGender.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.studentGender.Margin = new System.Windows.Forms.Padding(2);
             this.studentGender.Name = "studentGender";
             this.studentGender.Size = new System.Drawing.Size(92, 21);
             this.studentGender.TabIndex = 9;
@@ -237,7 +239,7 @@
             this.Edit,
             this.Delete});
             this.studentDataTable.Location = new System.Drawing.Point(9, 332);
-            this.studentDataTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.studentDataTable.Margin = new System.Windows.Forms.Padding(2);
             this.studentDataTable.Name = "studentDataTable";
             this.studentDataTable.ReadOnly = true;
             this.studentDataTable.RowHeadersWidth = 51;
@@ -269,7 +271,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Location = new System.Drawing.Point(285, 276);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(56, 27);
             this.btnSubmit.TabIndex = 19;
@@ -280,7 +282,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(361, 276);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(56, 27);
             this.btnUpdate.TabIndex = 20;
@@ -291,7 +293,7 @@
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(440, 279);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(56, 24);
             this.btnCancel.TabIndex = 21;
@@ -322,7 +324,7 @@
             // registrationDate
             // 
             this.registrationDate.Location = new System.Drawing.Point(118, 274);
-            this.registrationDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.registrationDate.Margin = new System.Windows.Forms.Padding(2);
             this.registrationDate.Name = "registrationDate";
             this.registrationDate.Size = new System.Drawing.Size(151, 20);
             this.registrationDate.TabIndex = 24;
@@ -334,7 +336,7 @@
             legend1.Name = "Legend1";
             this.studentReport.Legends.Add(legend1);
             this.studentReport.Location = new System.Drawing.Point(542, 17);
-            this.studentReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.studentReport.Margin = new System.Windows.Forms.Padding(2);
             this.studentReport.Name = "studentReport";
             this.studentReport.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea1";
@@ -369,7 +371,7 @@
             // txtId
             // 
             this.txtId.Location = new System.Drawing.Point(402, 37);
-            this.txtId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtId.Margin = new System.Windows.Forms.Padding(2);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(76, 20);
             this.txtId.TabIndex = 28;
@@ -382,20 +384,20 @@
             this.studentWeeklyReport.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.studentWeeklyReport.ColumnHeadersHeight = 29;
             this.studentWeeklyReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.studentWeeklyReport.Location = new System.Drawing.Point(705, 332);
-            this.studentWeeklyReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.studentWeeklyReport.Location = new System.Drawing.Point(705, 393);
+            this.studentWeeklyReport.Margin = new System.Windows.Forms.Padding(2);
             this.studentWeeklyReport.Name = "studentWeeklyReport";
             this.studentWeeklyReport.ReadOnly = true;
             this.studentWeeklyReport.RowHeadersWidth = 51;
             this.studentWeeklyReport.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.studentWeeklyReport.RowTemplate.Height = 24;
-            this.studentWeeklyReport.Size = new System.Drawing.Size(296, 310);
+            this.studentWeeklyReport.Size = new System.Drawing.Size(296, 249);
             this.studentWeeklyReport.TabIndex = 29;
             // 
             // lblReport
             // 
             this.lblReport.AutoSize = true;
-            this.lblReport.Location = new System.Drawing.Point(714, 317);
+            this.lblReport.Location = new System.Drawing.Point(703, 378);
             this.lblReport.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReport.Name = "lblReport";
             this.lblReport.Size = new System.Drawing.Size(118, 13);
@@ -405,7 +407,7 @@
             // lblsort
             // 
             this.lblsort.AutoSize = true;
-            this.lblsort.Location = new System.Drawing.Point(148, 316);
+            this.lblsort.Location = new System.Drawing.Point(148, 313);
             this.lblsort.Name = "lblsort";
             this.lblsort.Size = new System.Drawing.Size(44, 13);
             this.lblsort.TabIndex = 31;
@@ -427,11 +429,30 @@
             this.sortDataTable.Text = "Choose to sort";
             this.sortDataTable.SelectedIndexChanged += new System.EventHandler(this.sortDataTable_SelectedIndexChanged);
             // 
+            // weeklyReportDatePicker
+            // 
+            this.weeklyReportDatePicker.Location = new System.Drawing.Point(708, 351);
+            this.weeklyReportDatePicker.Name = "weeklyReportDatePicker";
+            this.weeklyReportDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.weeklyReportDatePicker.TabIndex = 33;
+            this.weeklyReportDatePicker.ValueChanged += new System.EventHandler(this.weeklyReportDatePicker_ValueChanged);
+            // 
+            // lbldatepicker
+            // 
+            this.lbldatepicker.AutoSize = true;
+            this.lbldatepicker.Location = new System.Drawing.Point(704, 332);
+            this.lbldatepicker.Name = "lbldatepicker";
+            this.lbldatepicker.Size = new System.Drawing.Size(89, 13);
+            this.lbldatepicker.TabIndex = 34;
+            this.lbldatepicker.Text = "Date Time Picker";
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1010, 652);
+            this.Controls.Add(this.lbldatepicker);
+            this.Controls.Add(this.weeklyReportDatePicker);
             this.Controls.Add(this.sortDataTable);
             this.Controls.Add(this.lblsort);
             this.Controls.Add(this.lblReport);
@@ -464,7 +485,7 @@
             this.Controls.Add(this.lastName);
             this.Controls.Add(this.firstName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "StudentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -511,6 +532,8 @@
         private System.Windows.Forms.Label lblReport;
         private System.Windows.Forms.Label lblsort;
         private System.Windows.Forms.ComboBox sortDataTable;
+        private System.Windows.Forms.DateTimePicker weeklyReportDatePicker;
+        private System.Windows.Forms.Label lbldatepicker;
     }
 }
 
