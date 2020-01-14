@@ -67,6 +67,8 @@
             this.sortDataTable = new System.Windows.Forms.ComboBox();
             this.weeklyReportDatePicker = new System.Windows.Forms.DateTimePicker();
             this.lbldatepicker = new System.Windows.Forms.Label();
+            this.programmes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentWeeklyReport)).BeginInit();
@@ -74,34 +76,34 @@
             // 
             // firstName
             // 
-            this.firstName.Location = new System.Drawing.Point(117, 84);
-            this.firstName.Margin = new System.Windows.Forms.Padding(2);
+            this.firstName.Location = new System.Drawing.Point(156, 103);
+            this.firstName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.firstName.Name = "firstName";
-            this.firstName.Size = new System.Drawing.Size(76, 20);
+            this.firstName.Size = new System.Drawing.Size(100, 22);
             this.firstName.TabIndex = 2;
             // 
             // lastName
             // 
-            this.lastName.Location = new System.Drawing.Point(354, 84);
-            this.lastName.Margin = new System.Windows.Forms.Padding(2);
+            this.lastName.Location = new System.Drawing.Point(472, 103);
+            this.lastName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lastName.Name = "lastName";
-            this.lastName.Size = new System.Drawing.Size(76, 20);
+            this.lastName.Size = new System.Drawing.Size(100, 22);
             this.lastName.TabIndex = 3;
             // 
             // address
             // 
-            this.address.Location = new System.Drawing.Point(117, 135);
-            this.address.Margin = new System.Windows.Forms.Padding(2);
+            this.address.Location = new System.Drawing.Point(156, 166);
+            this.address.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.address.Name = "address";
-            this.address.Size = new System.Drawing.Size(76, 20);
+            this.address.Size = new System.Drawing.Size(100, 22);
             this.address.TabIndex = 4;
             // 
             // email
             // 
-            this.email.Location = new System.Drawing.Point(354, 134);
-            this.email.Margin = new System.Windows.Forms.Padding(2);
+            this.email.Location = new System.Drawing.Point(472, 165);
+            this.email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(76, 20);
+            this.email.Size = new System.Drawing.Size(100, 22);
             this.email.TabIndex = 5;
             // 
             // studentProgramme
@@ -111,27 +113,27 @@
             "Computing",
             "Multimedia",
             "Networking"});
-            this.studentProgramme.Location = new System.Drawing.Point(117, 188);
-            this.studentProgramme.Margin = new System.Windows.Forms.Padding(2);
+            this.studentProgramme.Location = new System.Drawing.Point(156, 231);
+            this.studentProgramme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.studentProgramme.Name = "studentProgramme";
-            this.studentProgramme.Size = new System.Drawing.Size(92, 21);
+            this.studentProgramme.Size = new System.Drawing.Size(121, 24);
             this.studentProgramme.TabIndex = 6;
             this.studentProgramme.Text = "Computing";
             // 
             // studentBirthDate
             // 
-            this.studentBirthDate.Location = new System.Drawing.Point(354, 188);
-            this.studentBirthDate.Margin = new System.Windows.Forms.Padding(2);
+            this.studentBirthDate.Location = new System.Drawing.Point(472, 231);
+            this.studentBirthDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.studentBirthDate.Name = "studentBirthDate";
-            this.studentBirthDate.Size = new System.Drawing.Size(151, 20);
+            this.studentBirthDate.Size = new System.Drawing.Size(200, 22);
             this.studentBirthDate.TabIndex = 7;
             // 
             // studentContactNo
             // 
-            this.studentContactNo.Location = new System.Drawing.Point(117, 233);
-            this.studentContactNo.Margin = new System.Windows.Forms.Padding(2);
+            this.studentContactNo.Location = new System.Drawing.Point(156, 287);
+            this.studentContactNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.studentContactNo.Name = "studentContactNo";
-            this.studentContactNo.Size = new System.Drawing.Size(76, 20);
+            this.studentContactNo.Size = new System.Drawing.Size(100, 22);
             this.studentContactNo.TabIndex = 8;
             // 
             // studentGender
@@ -141,90 +143,82 @@
             "Male",
             "Female",
             "Other"});
-            this.studentGender.Location = new System.Drawing.Point(354, 233);
-            this.studentGender.Margin = new System.Windows.Forms.Padding(2);
+            this.studentGender.Location = new System.Drawing.Point(472, 287);
+            this.studentGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.studentGender.Name = "studentGender";
-            this.studentGender.Size = new System.Drawing.Size(92, 21);
+            this.studentGender.Size = new System.Drawing.Size(121, 24);
             this.studentGender.TabIndex = 9;
             this.studentGender.Text = "Male";
             // 
             // fName
             // 
             this.fName.AutoSize = true;
-            this.fName.Location = new System.Drawing.Point(56, 86);
-            this.fName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.fName.Location = new System.Drawing.Point(75, 106);
             this.fName.Name = "fName";
-            this.fName.Size = new System.Drawing.Size(57, 13);
+            this.fName.Size = new System.Drawing.Size(76, 17);
             this.fName.TabIndex = 10;
             this.fName.Text = "First Name";
             // 
             // lName
             // 
             this.lName.AutoSize = true;
-            this.lName.Location = new System.Drawing.Point(292, 84);
-            this.lName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lName.Location = new System.Drawing.Point(389, 103);
             this.lName.Name = "lName";
-            this.lName.Size = new System.Drawing.Size(58, 13);
+            this.lName.Size = new System.Drawing.Size(76, 17);
             this.lName.TabIndex = 11;
             this.lName.Text = "Last Name";
             // 
             // sAddress
             // 
             this.sAddress.AutoSize = true;
-            this.sAddress.Location = new System.Drawing.Point(63, 138);
-            this.sAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.sAddress.Location = new System.Drawing.Point(84, 170);
             this.sAddress.Name = "sAddress";
-            this.sAddress.Size = new System.Drawing.Size(45, 13);
+            this.sAddress.Size = new System.Drawing.Size(60, 17);
             this.sAddress.TabIndex = 12;
             this.sAddress.Text = "Address";
             // 
             // sEmail
             // 
             this.sEmail.AutoSize = true;
-            this.sEmail.Location = new System.Drawing.Point(310, 138);
-            this.sEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.sEmail.Location = new System.Drawing.Point(413, 170);
             this.sEmail.Name = "sEmail";
-            this.sEmail.Size = new System.Drawing.Size(32, 13);
+            this.sEmail.Size = new System.Drawing.Size(42, 17);
             this.sEmail.TabIndex = 13;
             this.sEmail.Text = "Email";
             // 
             // sProgramme
             // 
             this.sProgramme.AutoSize = true;
-            this.sProgramme.Location = new System.Drawing.Point(52, 190);
-            this.sProgramme.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.sProgramme.Location = new System.Drawing.Point(69, 234);
             this.sProgramme.Name = "sProgramme";
-            this.sProgramme.Size = new System.Drawing.Size(60, 13);
+            this.sProgramme.Size = new System.Drawing.Size(81, 17);
             this.sProgramme.TabIndex = 14;
             this.sProgramme.Text = "Programme";
             // 
             // sDOB
             // 
             this.sDOB.AutoSize = true;
-            this.sDOB.Location = new System.Drawing.Point(284, 190);
-            this.sDOB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.sDOB.Location = new System.Drawing.Point(379, 234);
             this.sDOB.Name = "sDOB";
-            this.sDOB.Size = new System.Drawing.Size(66, 13);
+            this.sDOB.Size = new System.Drawing.Size(87, 17);
             this.sDOB.TabIndex = 15;
             this.sDOB.Text = "Date of Birth";
             // 
             // sContact
             // 
             this.sContact.AutoSize = true;
-            this.sContact.Location = new System.Drawing.Point(51, 237);
-            this.sContact.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.sContact.Location = new System.Drawing.Point(68, 292);
             this.sContact.Name = "sContact";
-            this.sContact.Size = new System.Drawing.Size(64, 13);
+            this.sContact.Size = new System.Drawing.Size(82, 17);
             this.sContact.TabIndex = 16;
             this.sContact.Text = "Contact No.";
             // 
             // sGender
             // 
             this.sGender.AutoSize = true;
-            this.sGender.Location = new System.Drawing.Point(308, 237);
-            this.sGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.sGender.Location = new System.Drawing.Point(411, 292);
             this.sGender.Name = "sGender";
-            this.sGender.Size = new System.Drawing.Size(42, 13);
+            this.sGender.Size = new System.Drawing.Size(56, 17);
             this.sGender.TabIndex = 17;
             this.sGender.Text = "Gender";
             // 
@@ -238,13 +232,13 @@
             this.studentDataTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Edit,
             this.Delete});
-            this.studentDataTable.Location = new System.Drawing.Point(9, 332);
-            this.studentDataTable.Margin = new System.Windows.Forms.Padding(2);
+            this.studentDataTable.Location = new System.Drawing.Point(12, 409);
+            this.studentDataTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.studentDataTable.Name = "studentDataTable";
             this.studentDataTable.ReadOnly = true;
             this.studentDataTable.RowHeadersWidth = 51;
             this.studentDataTable.RowTemplate.Height = 24;
-            this.studentDataTable.Size = new System.Drawing.Size(692, 310);
+            this.studentDataTable.Size = new System.Drawing.Size(923, 382);
             this.studentDataTable.TabIndex = 18;
             this.studentDataTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentDataTable_CellContentClick);
             // 
@@ -270,10 +264,10 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(285, 276);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubmit.Location = new System.Drawing.Point(380, 340);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(56, 27);
+            this.btnSubmit.Size = new System.Drawing.Size(75, 33);
             this.btnSubmit.TabIndex = 19;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -281,10 +275,10 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(361, 276);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdate.Location = new System.Drawing.Point(481, 340);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(56, 27);
+            this.btnUpdate.Size = new System.Drawing.Size(75, 33);
             this.btnUpdate.TabIndex = 20;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -292,10 +286,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(440, 279);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Location = new System.Drawing.Point(587, 343);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(56, 24);
+            this.btnCancel.Size = new System.Drawing.Size(75, 30);
             this.btnCancel.TabIndex = 21;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -304,29 +298,27 @@
             // studentDataTableLabel
             // 
             this.studentDataTableLabel.AutoSize = true;
-            this.studentDataTableLabel.Location = new System.Drawing.Point(14, 316);
-            this.studentDataTableLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.studentDataTableLabel.Location = new System.Drawing.Point(19, 389);
             this.studentDataTableLabel.Name = "studentDataTableLabel";
-            this.studentDataTableLabel.Size = new System.Drawing.Size(100, 13);
+            this.studentDataTableLabel.Size = new System.Drawing.Size(131, 17);
             this.studentDataTableLabel.TabIndex = 22;
             this.studentDataTableLabel.Text = "Student Data Table";
             // 
             // sRegistrationDate
             // 
             this.sRegistrationDate.AutoSize = true;
-            this.sRegistrationDate.Location = new System.Drawing.Point(24, 279);
-            this.sRegistrationDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.sRegistrationDate.Location = new System.Drawing.Point(32, 343);
             this.sRegistrationDate.Name = "sRegistrationDate";
-            this.sRegistrationDate.Size = new System.Drawing.Size(89, 13);
+            this.sRegistrationDate.Size = new System.Drawing.Size(118, 17);
             this.sRegistrationDate.TabIndex = 23;
             this.sRegistrationDate.Text = "Registration Date";
             // 
             // registrationDate
             // 
-            this.registrationDate.Location = new System.Drawing.Point(118, 274);
-            this.registrationDate.Margin = new System.Windows.Forms.Padding(2);
+            this.registrationDate.Location = new System.Drawing.Point(157, 337);
+            this.registrationDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.registrationDate.Name = "registrationDate";
-            this.registrationDate.Size = new System.Drawing.Size(151, 20);
+            this.registrationDate.Size = new System.Drawing.Size(200, 22);
             this.registrationDate.TabIndex = 24;
             // 
             // studentReport
@@ -335,25 +327,24 @@
             this.studentReport.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.studentReport.Legends.Add(legend1);
-            this.studentReport.Location = new System.Drawing.Point(542, 17);
-            this.studentReport.Margin = new System.Windows.Forms.Padding(2);
+            this.studentReport.Location = new System.Drawing.Point(723, 21);
+            this.studentReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.studentReport.Name = "studentReport";
             this.studentReport.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.studentReport.Series.Add(series1);
-            this.studentReport.Size = new System.Drawing.Size(459, 297);
+            this.studentReport.Size = new System.Drawing.Size(612, 366);
             this.studentReport.TabIndex = 25;
             this.studentReport.Text = "Student Report";
             // 
             // Chartlabel
             // 
             this.Chartlabel.AutoSize = true;
-            this.Chartlabel.Location = new System.Drawing.Point(538, 1);
-            this.Chartlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Chartlabel.Location = new System.Drawing.Point(717, 1);
             this.Chartlabel.Name = "Chartlabel";
-            this.Chartlabel.Size = new System.Drawing.Size(79, 13);
+            this.Chartlabel.Size = new System.Drawing.Size(104, 17);
             this.Chartlabel.TabIndex = 26;
             this.Chartlabel.Text = "Student Report";
             // 
@@ -361,19 +352,18 @@
             // 
             this.heading.AutoSize = true;
             this.heading.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.heading.Location = new System.Drawing.Point(126, 24);
-            this.heading.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.heading.Location = new System.Drawing.Point(168, 30);
             this.heading.Name = "heading";
-            this.heading.Size = new System.Drawing.Size(267, 32);
+            this.heading.Size = new System.Drawing.Size(325, 39);
             this.heading.TabIndex = 27;
             this.heading.Text = "Student Detail Form";
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(402, 37);
-            this.txtId.Margin = new System.Windows.Forms.Padding(2);
+            this.txtId.Location = new System.Drawing.Point(536, 46);
+            this.txtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(76, 20);
+            this.txtId.Size = new System.Drawing.Size(100, 22);
             this.txtId.TabIndex = 28;
             this.txtId.Visible = false;
             // 
@@ -384,32 +374,35 @@
             this.studentWeeklyReport.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.studentWeeklyReport.ColumnHeadersHeight = 29;
             this.studentWeeklyReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.studentWeeklyReport.Location = new System.Drawing.Point(705, 393);
-            this.studentWeeklyReport.Margin = new System.Windows.Forms.Padding(2);
+            this.studentWeeklyReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.programmes,
+            this.number});
+            this.studentWeeklyReport.Location = new System.Drawing.Point(940, 484);
+            this.studentWeeklyReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.studentWeeklyReport.Name = "studentWeeklyReport";
             this.studentWeeklyReport.ReadOnly = true;
             this.studentWeeklyReport.RowHeadersWidth = 51;
             this.studentWeeklyReport.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.studentWeeklyReport.RowTemplate.Height = 24;
-            this.studentWeeklyReport.Size = new System.Drawing.Size(296, 249);
+            this.studentWeeklyReport.Size = new System.Drawing.Size(395, 306);
             this.studentWeeklyReport.TabIndex = 29;
             // 
             // lblReport
             // 
             this.lblReport.AutoSize = true;
-            this.lblReport.Location = new System.Drawing.Point(703, 378);
-            this.lblReport.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblReport.Location = new System.Drawing.Point(937, 465);
             this.lblReport.Name = "lblReport";
-            this.lblReport.Size = new System.Drawing.Size(118, 13);
+            this.lblReport.Size = new System.Drawing.Size(154, 17);
             this.lblReport.TabIndex = 30;
             this.lblReport.Text = "Student Weekly Report";
             // 
             // lblsort
             // 
             this.lblsort.AutoSize = true;
-            this.lblsort.Location = new System.Drawing.Point(148, 313);
+            this.lblsort.Location = new System.Drawing.Point(197, 385);
+            this.lblsort.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblsort.Name = "lblsort";
-            this.lblsort.Size = new System.Drawing.Size(44, 13);
+            this.lblsort.Size = new System.Drawing.Size(58, 17);
             this.lblsort.TabIndex = 31;
             this.lblsort.Text = "Sort By:";
             // 
@@ -422,35 +415,54 @@
             "RegistrationDate (Descending)",
             "Name(Ascending)",
             "Name(Descending)"});
-            this.sortDataTable.Location = new System.Drawing.Point(198, 309);
+            this.sortDataTable.Location = new System.Drawing.Point(264, 380);
+            this.sortDataTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sortDataTable.Name = "sortDataTable";
-            this.sortDataTable.Size = new System.Drawing.Size(152, 21);
+            this.sortDataTable.Size = new System.Drawing.Size(201, 24);
             this.sortDataTable.TabIndex = 32;
             this.sortDataTable.Text = "Choose to sort";
             this.sortDataTable.SelectedIndexChanged += new System.EventHandler(this.sortDataTable_SelectedIndexChanged);
             // 
             // weeklyReportDatePicker
             // 
-            this.weeklyReportDatePicker.Location = new System.Drawing.Point(708, 351);
+            this.weeklyReportDatePicker.Location = new System.Drawing.Point(944, 432);
+            this.weeklyReportDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.weeklyReportDatePicker.Name = "weeklyReportDatePicker";
-            this.weeklyReportDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.weeklyReportDatePicker.Size = new System.Drawing.Size(265, 22);
             this.weeklyReportDatePicker.TabIndex = 33;
             this.weeklyReportDatePicker.ValueChanged += new System.EventHandler(this.weeklyReportDatePicker_ValueChanged);
             // 
             // lbldatepicker
             // 
             this.lbldatepicker.AutoSize = true;
-            this.lbldatepicker.Location = new System.Drawing.Point(704, 332);
+            this.lbldatepicker.Location = new System.Drawing.Point(939, 409);
+            this.lbldatepicker.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbldatepicker.Name = "lbldatepicker";
-            this.lbldatepicker.Size = new System.Drawing.Size(89, 13);
+            this.lbldatepicker.Size = new System.Drawing.Size(116, 17);
             this.lbldatepicker.TabIndex = 34;
             this.lbldatepicker.Text = "Date Time Picker";
             // 
+            // programmes
+            // 
+            this.programmes.HeaderText = "Programme";
+            this.programmes.MinimumWidth = 6;
+            this.programmes.Name = "programmes";
+            this.programmes.ReadOnly = true;
+            this.programmes.Width = 125;
+            // 
+            // number
+            // 
+            this.number.HeaderText = "Number";
+            this.number.MinimumWidth = 6;
+            this.number.Name = "number";
+            this.number.ReadOnly = true;
+            this.number.Width = 125;
+            // 
             // StudentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1010, 652);
+            this.ClientSize = new System.Drawing.Size(1347, 802);
             this.Controls.Add(this.lbldatepicker);
             this.Controls.Add(this.weeklyReportDatePicker);
             this.Controls.Add(this.sortDataTable);
@@ -485,7 +497,7 @@
             this.Controls.Add(this.lastName);
             this.Controls.Add(this.firstName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "StudentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -534,6 +546,8 @@
         private System.Windows.Forms.ComboBox sortDataTable;
         private System.Windows.Forms.DateTimePicker weeklyReportDatePicker;
         private System.Windows.Forms.Label lbldatepicker;
+        private System.Windows.Forms.DataGridViewTextBoxColumn programmes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn number;
     }
 }
 

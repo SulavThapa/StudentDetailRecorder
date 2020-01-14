@@ -207,7 +207,6 @@ namespace SulavThapa17031233
             List<Student> listStudents = obj.List();
             var convertStudents = listStudents.Where(s => s.registrationDate >= first_day_week && s.registrationDate < last_day_week);
 
-            BindChart(convertStudents.ToList());
 
             int computing = 0;
             int networking = 0;
@@ -239,7 +238,6 @@ namespace SulavThapa17031233
                 //Nothing to plot here
             }
         }
-
     }
 }
 
