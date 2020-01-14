@@ -18,22 +18,34 @@ namespace SulavThapa17031233
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //making the refrence object of the student made in the student class
-            Student obj = new Student();
-            //Adding the data from the textbox to the object
-            string firstname = firstName.Text;
-            string lastname = lastName.Text;
-            obj.Name = firstname + " " + lastname;
-            obj.address = address.Text;
-            obj.email = email.Text;
-            obj.studentProgramme = studentProgramme.Text;
-            obj.studentBirthDate = studentBirthDate.Value;
-            obj.studentContactNo = studentContactNo.Text;
-            obj.studentGender = studentGender.SelectedItem.ToString();
-            obj.registrationDate = registrationDate.Value;
-            obj.Add(obj);
-            BindGrid();
-            Clear();
+            if (Validation())
+            {
+                //making the refrence object of the student made in the student class
+                Student obj = new Student();
+                //Adding the data from the textbox to the object
+                string firstname = firstName.Text;
+                string lastname = lastName.Text;
+                obj.Name = firstname + " " + lastname;
+                obj.address = address.Text;
+                obj.email = email.Text;
+                obj.studentProgramme = studentProgramme.Text;
+                obj.studentBirthDate = studentBirthDate.Value;
+                obj.studentContactNo = studentContactNo.Text;
+                obj.studentGender = studentGender.SelectedItem.ToString();
+                obj.registrationDate = registrationDate.Value;
+                obj.Add(obj);
+                BindGrid();
+                Clear();
+            }
+        }
+
+        private bool Validation()
+        {
+            if(firstName.Text == "" && lastName.Text == "" && address.Text == "" && email.Text == "" && studentContactNo.Text == "" ){
+                MessageBox.Show("Input all the datas");
+            }
+            return false;
+
         }
 
         private void Clear()
@@ -114,25 +126,28 @@ namespace SulavThapa17031233
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            //making the refrence object of the student made in the student class
-            Student obj = new Student();
-            //Adding the data from the textbox to the object
-            obj.indexNoStudent = int.Parse(txtId.Text);
-            string firstname = firstName.Text;
-            string lastname = lastName.Text;
-            obj.Name = firstname + " " + lastname;
-            obj.address = address.Text;
-            obj.email = email.Text;
-            obj.studentProgramme = studentProgramme.Text;
-            obj.studentBirthDate = studentBirthDate.Value;
-            obj.studentContactNo = studentContactNo.Text;
-            obj.studentGender = studentGender.SelectedItem.ToString();
-            obj.registrationDate = registrationDate.Value;
-            obj.Edit(obj);
-            BindGrid();
-            Clear();
-            btnUpdate.Visible = false;
-            btnSubmit.Visible = true;
+            if (Validation())
+            {
+                //making the refrence object of the student made in the student class
+                Student obj = new Student();
+                //Adding the data from the textbox to the object
+                obj.indexNoStudent = int.Parse(txtId.Text);
+                string firstname = firstName.Text;
+                string lastname = lastName.Text;
+                obj.Name = firstname + " " + lastname;
+                obj.address = address.Text;
+                obj.email = email.Text;
+                obj.studentProgramme = studentProgramme.Text;
+                obj.studentBirthDate = studentBirthDate.Value;
+                obj.studentContactNo = studentContactNo.Text;
+                obj.studentGender = studentGender.SelectedItem.ToString();
+                obj.registrationDate = registrationDate.Value;
+                obj.Edit(obj);
+                BindGrid();
+                Clear();
+                btnUpdate.Visible = false;
+                btnSubmit.Visible = true;
+            }
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
